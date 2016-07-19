@@ -1,0 +1,25 @@
+body {
+  background: url("https://static.pexels.com/photos/3847/jetty-landing-stage-sea-sky.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.well {
+  width: 200px;
+  background-color: rgba(245, 245, 245, 0.4);
+  margin: 0 auto;
+}
+
+.container {
+  margin-top: 220px;
+}
+
+.spacing {
+  margin: 1px;
+}
+
+.custom {
+  width: 150px;
+}
