@@ -3,14 +3,15 @@ var serverURL = 'http://localhost:3000/'
 
 $(function () {
   // listen for the form login
-  $('#register-form').on('submit', function (event) {
+  $('#register-form').submit(function (event) {
     event.preventDefault()
+    console.log('submit was clicked')
     var formData = $(this).serialize()
-    signin(formData)
+    signup(formData)
   })
 })
 
-function signin (formData) {
+function signup (formData) {
   $.ajax({
     type: 'POST',
     url: serverURL + 'signup',
@@ -23,7 +24,7 @@ function signin (formData) {
       // else output error
       console.log(xhr.status)
       console.log(thrownError)
-      window.alert('Singup Failed')
+      window.alert('Signup Failed')
     }
   })
 }
