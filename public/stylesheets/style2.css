@@ -1,0 +1,26 @@
+html {
+  margin: 10px;
+}
+
+body {
+  background-color: grey;
+}
+
+h1 {
+  text-align: center;
+}
+
+.main, .city-box, .att-box {
+  margin: 2px;
+  padding: 5px;
+  background-color: rgba(245, 245, 245, 0.3);
+  border-radius: 3px;
+}
+
+#save-trip {
+  margin: 5px;
+}
+
+.city-box, .att-name {
+  cursor: pointer;
+}

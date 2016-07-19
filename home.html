@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Trip-Over Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="./public/js/home.js"></script>
+    <!-- <script src="./public/js/user_auth.js"></script> -->
+    <link rel="stylesheet" href="./public/stylesheets/style2.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-right navbar-static-top">
+     <div class="container-fluid">
+       <ul class="nav nav-pills">
+         <li role="presentation" class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+           </a>
+           <ul class="dropdown-menu">
+             <li role="presentation" class="active"><a href="#">Home</a></li>
+             <li role="presentation"><a href="#">Plan Trip</a></li>
+             <li role="presentation"><a href="#">My Profile</a></li>
+             <li role="presentation"><a href="#">Logout</a></li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+   </nav>
+
+    <div class="main">
+    <h1>Choose City</h1>
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button id="city-btn" type="button" class="btn btn-default">City</button>
+  </div>
+  <div class="btn-group" role="group">
+    <button id="trip-plan" type="button" class="btn btn-default">Trip Planning</button>
+  </div>
+</div>
+    <div class="city">
+      <div id="add-city"></div>
+      <div id="attract"></div>
+      <div id="add-att"></div>
+    </div>
+    <form>
+      <div class="btn-group">
+        <input type="submit" class="btn btn-default" value="Save Trip" id="save-trip">
+      </div>
+    </form>
+</div>
+  </body>
+</html>
