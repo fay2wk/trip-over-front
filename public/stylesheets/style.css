@@ -1,3 +1,16 @@
+@import 'https://fonts.googleapis.com/css?family=Abel%7CPoiret+One';
+
+* {
+   -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 body {
   background: url("https://static.pexels.com/photos/3847/jetty-landing-stage-sea-sky.jpeg");
   -webkit-background-size: cover;
@@ -6,15 +19,22 @@ body {
   background-size: cover;
 }
 
-.well {
-  width: 200px;
-  background-color: rgba(245, 245, 245, 0.4);
-  margin: 0 auto;
+body{
+   font-size: 62.5%;
+   font-family: 'Abel', sans-serif;
 }
 
-.container {
-  margin-top: 220px;
+.well {
+  width: 45%;
+  height: 25em;
+  background-color: rgba(245, 245, 245, 0.4);
+  margin: 0 auto;
+  border-radius: 15px;
 }
+
+/*.containerindex {
+  margin-top: 220px;
+}*/
 
 .spacing {
   margin: 1px;
@@ -22,4 +42,39 @@ body {
 
 .custom {
   width: 150px;
+}
+
+input {
+  height: 40px;
+  width: 150px;
+}
+
+body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
+
+
+.container {
+    width: 50%;
+    background: rgba(115, 113, 113, 0.5);
+ margin: 10em auto 10em auto;
+ padding: 2em;
+}
+
+h1 {
+ color: white;
+ margin: 0.5em auto 1em auto;
+ text-align: center;
+ font-family: 'Poiret One', cursive;
+ font-size: 5em;
+ font-weight: bold;
+}
+
+.button {
+ clear: both;
+ margin: 0.5em auto;
+ width: 40%;
+ height: auto;
+ background: white;
+ text-align: center;
+ padding: 1em;
+ font-size: 2em;
 }

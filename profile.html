@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type= "text/css" href="./public/stylesheets/style.css">
-    <title>Register</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="./public/js/register.js"></script>
 </head>
 <body>
+  <nav class="navbar navbar-right navbar-static-top">
+     <div class="container-fluid">
+       <ul class="nav nav-pills">
+         <li role="presentation" class="dropdown">
+           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+           </a>
+           <ul class="dropdown-menu">
+             <li role="presentation" class="active"><a href="#">Home</a></li>
+             <li role="presentation"><a href="#">Plan Trip</a></li>
+             <li role="presentation"><a href="#">My Profile</a></li>
+             <li role="presentation"><a href="#">Logout</a></li>
+           </ul>
+         </li>
+       </ul>
+     </div>
+   </nav>
   <div class="container">
   <div class="row">
   	<div class="col-md-6">
 
-          <form id="register-form" class="form-horizontal" action="" method="POST">
+          <form id="Edit-profile-form" class="form-horizontal" action="" method="POST">
           <fieldset>
             <div id="legend">
-              <legend class="">Register</legend>
+              <legend class="">Edit Profile</legend>
             </div>
             <div class="control-group">
               <label class="control-label" for="Name">Name</label>
@@ -36,16 +53,24 @@
 
             <div class="control-group">
               <label class="control-label" for="password">Password</label>
-              <div class="controls">
+              <div class="controls user">
                 <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control input-lg">
                 <p class="help-block">Password should be at least 6 characters</p>
               </div>
             </div>
 
             <div class="control-group">
+              <label class="control-label" for="password_confirm">Password (Confirm)</label>
+              <div class="controls">
+                <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirm password" class="form-control input-lg">
+                <p class="help-block">Please confirm password</p>
+              </div>
+            </div>
+
+            <div class="control-group">
               <!-- Button -->
               <div class="controls">
-                <input type="submit" name="submit" value="Submit" class="btn btn-success"></input>
+                <input type="submit" name="submit" value="save" class="btn btn-success"></input>
               </div>
             </div>
           </fieldset>
@@ -53,5 +78,17 @@
     </div>
   </div>
 </div>
+</br></br>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div id="legend">
+  <legend class="">My Trips</legend>
+</div>
+</div>
+</div>
+</div>
+
+
 </body>
 </html>
