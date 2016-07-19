@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>Register</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./js/register.js"></script>
+    <script src="./public/js/register.js"></script>
 </head>
 <body>
 </br></br></br>
@@ -13,7 +13,7 @@
   <div class="row">
   	<div class="col-md-6">
 
-          <form class="form-horizontal" action="" method="POST">
+          <form id="register-form" class="form-horizontal" action="" method="POST">
           <fieldset>
             <div id="legend">
               <legend class="">Register</legend>
@@ -21,7 +21,7 @@
             <div class="control-group">
               <label class="control-label" for="Name">Name</label>
               <div class="controls">
-                <input type="text" id="Name" name="Name" placeholder="John Doe" class="form-control input-lg">
+                <input type="text" id="Name" name="user[name]" placeholder="John Doe" class="form-control input-lg">
                 <p class="help-block">Username can contain any letters or numbers, without spaces</p>
               </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="control-group">
               <label class="control-label" for="email">E-mail</label>
               <div class="controls">
-                <input type="email" id="email" name="email" placeholder="example@email.com" class="form-control input-lg">
+                <input type="email" id="email" name="user[email]" placeholder="example@email.com" class="form-control input-lg">
                 <p class="help-block">Please provide your E-mail</p>
               </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="control-group">
               <label class="control-label" for="password">Password</label>
               <div class="controls">
-                <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg">
+                <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control input-lg">
                 <p class="help-block">Password should be at least 6 characters</p>
               </div>
             </div>
@@ -53,12 +53,13 @@
             <div class="control-group">
               <!-- Button -->
               <div class="controls">
-                <button class="btn btn-success">Register</button>
+                <input type="submit" name="submit" value="submit" class="btn btn-success">Register</input>
               </div>
             </div>
           </fieldset>
         </form>
-
     </div>
   </div>
 </div>
+</body>
+</html>
