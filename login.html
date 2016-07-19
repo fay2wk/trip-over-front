@@ -6,7 +6,7 @@
       <link rel="stylesheet" type= "text/css" href="./public/stylesheets/style.css">
     <title>Login</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./js/login.js"></script>
+    <script src="./public/js/login.js"></script>
 </head>
 <body>
     <!-- <button id="logout">Logout</button> -->
@@ -15,28 +15,28 @@
   <div class="row">
   	<div class="col-md-6">
 
-          <form class="form-horizontal" action="" method="POST">
+          <form class="form-horizontal" id="login-form" action="" method="POST">
           <fieldset>
             <div id="legend">
               <legend class="">Login</legend>
             </div>
             <div class="control-group">
-              <label class="control-label" for="Name">Name</label>
+              <label class="control-label" for="email">Email</label>
               <div class="controls">
-                <input type="text" id="Name" name="Name" placeholder="Name" class="form-control input-lg">
+                <input type="text" id="user-email" name="user[email]" placeholder="Email" class="form-control input-lg">
               </div>
             </div>
 
             <div class="control-group">
               <label class="control-label" for="password">Password</label>
               <div class="controls">
-                <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg">
+                <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control input-lg">
             </div>
           </br>
             <div class="control-group">
               <!-- Button -->
               <div class="controls">
-                <button class="btn btn-success">Login</button>
+                <input name='submit' value='submit' type ='submit' class="btn btn-success"></input>
               </div>
             </div>
           </fieldset>
