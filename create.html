@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="./public/stylesheets/style.css">
+    <title>Create</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script src="./public/js/user_auth.js"></script> -->
+    <script src="./public/js/create.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+  	<div class="col-md-6">
+
+          <form id="create-form" class="form-horizontal" action="" method="POST">
+          <fieldset>
+            <div id="legend">
+              <legend class="">Create Attraction</legend>
+            </div>
+
+          <div class
+            <div class="control-group">
+              <label class="control-label" for="City">Add City:</label>
+              <div class="controls">
+                <input type="text" id="city" name="City" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+          </br>
+
+            <button type="button" class="btn btn-default save-city">></button>
+
+</br></br>
+            <div class="row">
+                     <div class="col-lg-12">
+                         <div class="btn-group">
+                             <button type="button" class="btn btn-default dropdown-toggle include-city" data-toggle="dropdown">Cities<span class="caret"></span></button>
+                             <ul class="dropdown-menu scrollable-menu" role="menu">
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+               </br>
+
+            <div class="control-group">
+              <label class="control-label" for="Name">Name:</label>
+              <div class="controls">
+                <input type="text" id="attraction-name" name="attraction-name" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+          <div class="control-group">
+            <label class="control-label" for="details">Details:</label>
+            <div class="controls">
+          <textarea class="createAttraction" cols="50" rows="5" placeholder="" class="form-control input-lg"></textarea>
+        </div></div>
+
+            <div class="control-group">
+              <label class="control-label" for="longitude">Longitude:</label>
+              <div class="controls">
+                <input type="text" id="longitude" name="longitude" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="lattitude">Lattitude:</label>
+              <div class="controls">
+                <input type="text" id="lattitude" name="lattitude" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="phone-number">Phone Number:</label>
+              <div class="controls">
+                <input type="text" id="phone-number" name="phone-number" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" for="image">Image Link:</label>
+              <div class="controls">
+                <input type="text" id="image" name="image" placeholder="" class="form-control input-lg">
+              </div>
+            </div>
+</br>
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <input type="submit" name="submit" value="Save" class="btn btn-success save-attraction"></input>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
