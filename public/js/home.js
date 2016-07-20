@@ -47,9 +47,10 @@ $(document).ready(function () {
   // Attractions will be pushed into the empty array on each click.
   var attractArray = []
   $(document).on('click', '.att-name', function (event) {
+    console.log(this)
     for (var i = 0; i < $(this).length; i++) {
-      var text = $(this).text()
-      attractArray.push(text)
+      var attractObj = {name: $(this).text(), details: $(this).siblings('p').text()}
+      attractArray.push(attractObj)
     }
     console.log(attractArray)
   })
@@ -58,7 +59,7 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#add-att').show()
     $.each(attractArray, function (index, item) {
-      $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index] + '</h3>' + '</div>' + '</br>')
+      $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
   })
   $(document).on('click', '#save-trip', function (event) {
