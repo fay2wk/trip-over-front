@@ -1,6 +1,7 @@
 /* globals $ alert */
 // loads main page with select of cities
 $(document).ready(function () {
+  $('#dates').hide()
   $.ajax({
     url: 'http://localhost:3000/city',
     type: 'GET',
@@ -19,9 +20,10 @@ $(document).ready(function () {
   $('#city-btn').on('click', function (event) {
     $('#add-att').empty()
     $('#attract').empty()
+    $('#dates').hide()
     $('#add-city').show()
   })
-  // when use selects a city, all city's attractions will be shown. The text is from the city-box div which has the city's name. The city's name is then included in the url to direct to the corresponding city and it's attractions
+  // when user selects a city, all city's attractions will be shown. The text is from the city-box div which has the city's name. The city's name is then included in the url to direct to the corresponding city and it's attractions
   $(document).on('click', '.city-box', function (event) {
     var text = $(this).text()
     $.ajax({
@@ -44,7 +46,7 @@ $(document).ready(function () {
       }
     })
   })
-  // Attractions will be pushed into the empty array on each click.
+  // Attraction's name and details will be pushed into the empty array on each click.
   var attractArray = []
   $(document).on('click', '.att-name', function (event) {
     console.log(this)
@@ -58,13 +60,23 @@ $(document).ready(function () {
     $('#add-city').hide()
     $('#attract').empty()
     $('#add-att').show()
+    $('#dates').show()
     $.each(attractArray, function (index, item) {
       $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
   })
   $(document).on('click', '#save-trip', function (event) {
-    var trip = {places: attractArray}
-    console.log(attractArray)
+    event.preventDefault()
+    console.log('hi')
+    if(!attractArray) {
+        alert('There are no attractions in trips.')
+    } else {
+    // Get date values
+    var startD = $('#start').val()
+    var endD = $('#end').val()
+    var trip = {places: attractArray, startDate: startD, endDate: endD}
+    console.log(trip)
+    }
     $.ajax({
       type: 'POST',
       data: JSON.stringify(trip),
