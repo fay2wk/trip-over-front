@@ -53,6 +53,8 @@ $(document).ready(function () {
     for (var i = 0; i < $(this).length; i++) {
       var attractObj = {name: $(this).text(), details: $(this).siblings('p').text()}
       attractArray.push(attractObj)
+      // Refactor
+      $(this).parent('.att-box').hide()
     }
     console.log(attractArray)
   })
@@ -66,21 +68,28 @@ $(document).ready(function () {
     })
   })
   $(document).on('click', '#save-trip', function (event) {
-    event.preventDefault()
     console.log('hi')
-    if(!attractArray) {
-        alert('There are no attractions in trips.')
+    if (attractArray.length < 1) {
+      alert('There are no attractions in trips.')
+      return
     } else {
     // Get date values
-    var startD = $('#start').val()
-    var endD = $('#end').val()
-    var trip = {places: attractArray, startDate: startD, endDate: endD}
-    console.log(trip)
+      var startD = $('#start').val()
+      var endD = $('#end').val()
+      var trip = {places: attractArray, startDate: startD, endDate: endD}
+      console.log(trip)
     }
     $.ajax({
       type: 'POST',
-      data: JSON.stringify(trip),
-      url: 'http://localhost:3000/trips'
+      data: trip,
+      url: 'http://localhost:3000/trips',
+      headers: {
+        'User-Email': window.localStorage['email'],
+        'Auth-Token': window.localStorage['auth_token']
+      },
+      success: function (data) {
+        console.info(data)
+      }
     })
   })
 })

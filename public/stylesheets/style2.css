@@ -10,6 +10,10 @@ h1 {
   text-align: center;
 }
 
+input {
+  margin: 4px;
+}
+
 .main, .city-box, .att-box {
   margin: 2px;
   padding: 5px;

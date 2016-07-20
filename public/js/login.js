@@ -2,10 +2,8 @@
 var serverURL = 'http://localhost:3000/'
 
 $(function () {
-  console.log('listening')
   // listen for the form login
-  $('#login-form').submit(function (event) {
-    console.log('submit clicked')
+  $('#login-form').on('submit', function (event) {
     event.preventDefault()
     var formData = $(this).serialize()
     signin(formData)
@@ -13,7 +11,6 @@ $(function () {
 })
 
 function signin (formData) {
-  console.log(formData)
   $.ajax({
     type: 'POST',
     url: serverURL + 'signin',
