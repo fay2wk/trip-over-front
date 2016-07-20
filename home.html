@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="./public/stylesheets/style2.css">
   </head>
   <body>
-    <nav class="navbar navbar-right navbar-static-top">
+    <div class="main">
+      <!-- nav bar -->
+      <nav class="navbar navbar-right navbar-static-top">
      <div class="container-fluid">
        <ul class="nav nav-pills">
          <li role="presentation" class="dropdown">
@@ -27,9 +29,11 @@
        </ul>
      </div>
    </nav>
-
-    <div class="main">
-    <h1>Choose City</h1>
+   <!-- end of nav -->
+   <div class="top-head">
+   <img id="logo" src="./public/images/logo.png">
+  <h1>Choose City</h1>
+</div>
   <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
     <button id="city-btn" type="button" class="btn btn-default">City</button>
@@ -43,7 +47,7 @@
       <div id="attract"></div>
       <div id="dates">
         <form>
-        Start Date: <input type="text" id="start" placeholder="dd-mm-yyyy">
+        Start Date: <input type="text" id="start" placeholder="dd-mm-yyyy"></br>
         End Date: <input type="text" id="end" placeholder="dd-mm-yyyy">
         <div id="add-att"></div>
       </div>
