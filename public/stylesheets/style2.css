@@ -45,6 +45,7 @@ input {
   color: black;
   border: none;
   box-shadow: 3px 3px 2px #888888;
+  /*background-color: #B5F4F4;*/
 }
 
 #logo {
@@ -68,7 +69,7 @@ input {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  box-shadow: 2px 2px 2px #888888;
+  box-shadow: 3px 3px 3px #888888;
   color: white;
 }
 

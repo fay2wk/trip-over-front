@@ -22,10 +22,12 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#dates').hide()
     $('#add-city').show()
+    $('h1').text('Choose City')
   })
   // when user selects a city, all city's attractions will be shown. The text is from the city-box div which has the city's name. The city's name is then included in the url to direct to the corresponding city and it's attractions
   $(document).on('click', '.city-box', function (event) {
     var text = $(this).text()
+    $('h1').text('Choose Attraction')
     $.ajax({
       url: 'http://localhost:3000/' + text + '/attractions',
       type: 'GET',
@@ -63,6 +65,7 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#add-att').show()
     $('#dates').show()
+    $('h1').text('Current Trip')
     $.each(attractArray, function (index, item) {
       $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
