@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="./public/js/home.js"></script>
-    <!-- <script src="./public/js/user_auth.js"></script> -->
+    <script src="./public/js/user_auth.js"></script>
     <link rel="stylesheet" href="./public/stylesheets/style2.css">
   </head>
   <body>
@@ -41,9 +41,13 @@
     <div class="city">
       <div id="add-city"></div>
       <div id="attract"></div>
-      <div id="add-att"></div>
+      <div id="dates">
+        <form>
+        Start Date: <input type="text" id="start" placeholder="dd-mm-yyyy">
+        End Date: <input type="text" id="end" placeholder="dd-mm-yyyy">
+        <div id="add-att"></div>
+      </div>
     </div>
-    <form>
       <div class="btn-group">
         <input type="submit" class="btn btn-default" value="Save Trip" id="save-trip">
       </div>
