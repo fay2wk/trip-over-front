@@ -55,7 +55,6 @@ $(document).ready(function () {
     for (var i = 0; i < $(this).length; i++) {
       var attractObj = {name: $(this).text(), details: $(this).siblings('p').text()}
       attractArray.push(attractObj)
-      // Refactor
       $(this).parent('.att-box').hide()
     }
     console.log(attractArray)
