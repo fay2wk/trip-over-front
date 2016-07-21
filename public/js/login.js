@@ -1,7 +1,11 @@
 /* global $ */
-var serverURL = 'http://localhost:3000/'
+var serverURL = 'https://trip-over.herokuapp.com/'
 
 $(function () {
+  $('.signup').on('click', function (event) {
+    event.preventDefault()
+    window.location.href = 'register.html'
+  })
   // listen for the form login
   $('#login-form').on('submit', function (event) {
     event.preventDefault()

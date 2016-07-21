@@ -2,7 +2,7 @@
 $(document).ready(function () {
   var id = []
   $.ajax({
-    url: 'http://localhost:3000/trips',
+    url: 'https://trip-over.herokuapp.com/trips',
     headers: {
       'User-Email': window.localStorage['email'],
       'Auth-Token': window.localStorage['auth_token']
@@ -28,7 +28,7 @@ $(document).ready(function () {
     event.preventDefault()
     $.ajax({
       type: 'DELETE',
-      url: 'http://localhost:3000/trips/' + id[this.id],
+      url: 'https://trip-over.herokuapp.com/trips/' + id[this.id],
       headers: {
         'User-Email': window.localStorage['email'],
         'Auth-Token': window.localStorage['auth_token']
