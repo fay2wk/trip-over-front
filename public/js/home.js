@@ -22,10 +22,12 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#dates').hide()
     $('#add-city').show()
+    $('h1').text('Choose City')
   })
   // when user selects a city, all city's attractions will be shown. The text is from the city-box div which has the city's name. The city's name is then included in the url to direct to the corresponding city and it's attractions
   $(document).on('click', '.city-box', function (event) {
     var text = $(this).text()
+    $('h1').text('Choose Attraction')
     $.ajax({
       url: 'http://localhost:3000/' + text + '/attractions',
       type: 'GET',
@@ -53,6 +55,7 @@ $(document).ready(function () {
     for (var i = 0; i < $(this).length; i++) {
       var attractObj = {name: $(this).text(), details: $(this).siblings('p').text()}
       attractArray.push(attractObj)
+      $(this).parent('.att-box').hide()
     }
     console.log(attractArray)
   })
@@ -61,26 +64,34 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#add-att').show()
     $('#dates').show()
+    $('h1').text('Current Trip')
     $.each(attractArray, function (index, item) {
       $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
   })
   $(document).on('click', '#save-trip', function (event) {
-    event.preventDefault()
     console.log('hi')
-    if(!attractArray) {
-        alert('There are no attractions in trips.')
+    if (attractArray.length < 1) {
+      alert('There are no attractions in trips.')
+      return
     } else {
     // Get date values
-    var startD = $('#start').val()
-    var endD = $('#end').val()
-    var trip = {places: attractArray, startDate: startD, endDate: endD}
-    console.log(trip)
+      var startD = $('#start').val()
+      var endD = $('#end').val()
+      var trip = {places: attractArray, startDate: startD, endDate: endD}
+      console.log(trip)
     }
     $.ajax({
       type: 'POST',
-      data: JSON.stringify(trip),
-      url: 'http://localhost:3000/trips'
+      data: trip,
+      url: 'http://localhost:3000/trips',
+      headers: {
+        'User-Email': window.localStorage['email'],
+        'Auth-Token': window.localStorage['auth_token']
+      },
+      success: function (data) {
+        console.info(data)
+      }
     })
   })
 })

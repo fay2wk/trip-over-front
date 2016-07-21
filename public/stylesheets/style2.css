@@ -1,26 +1,79 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
 html {
   margin: 10px;
+  font-family: 'Raleway', sans-serif;
 }
 
 body {
-  background-color: grey;
+    background-image: url("http://i.imgur.com/2CJXqsV.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1 {
   text-align: center;
+  margin-left: 2px;
+}
+
+input {
+  margin: 4px;
 }
 
 .main, .city-box, .att-box {
   margin: 2px;
   padding: 5px;
-  background-color: rgba(245, 245, 245, 0.3);
   border-radius: 3px;
+}
+
+.main {
+  background-color: rgba(230, 230, 230, 0.7);
+}
+
+/*.city-box {
+  background-color: rgba(210, 210, 210, 0.7);
+}*/
+
+.att-box {
+  background-color: rgba(200, 200, 200, 0.7);
 }
 
 #save-trip {
   margin: 5px;
+  color: black;
+  border: none;
+  box-shadow: 3px 3px 2px #888888;
+  /*background-color: #B5F4F4;*/
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
 }
 
 .city-box, .att-name {
   cursor: pointer;
+}
+
+.top-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-box {
+  background-image: url("http://i.imgur.com/DkuNhAE.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: 3px 3px 3px #888888;
+  color: white;
+}
+
+input[type='text'] {
+    border-radius: 3px;
+    width: 30%;
 }
