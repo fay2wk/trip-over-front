@@ -38,7 +38,7 @@ $(document).ready(function () {
       dataType: 'json',
       success: function (attraction) {
         $('#add-city').hide()
-        $.each(attraction, function (a, item) {
+        $.each(attraction, function (a) {
           $.each(attraction[a].attractions, function (index, item) {
             $('#attract').append('<div class="att-box">' + '<h5 class="att-name">' + attraction[a].attractions[index].name + '</h5>' + '<p>' + attraction[a].attractions[index].details + '</p>' + '</div>' + '</br>')
           })
