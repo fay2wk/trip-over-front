@@ -6,11 +6,6 @@
      -moz-box-sizing: border-box;
          box-sizing: border-box;
 }
-.group:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 html {
   background-image: url("http://i.imgur.com/oPKHVSt.jpg");
@@ -23,6 +18,26 @@ html {
 
 body{
    font-size: 62.5%;
+}
+
+input[type='text'], input[type='password'] {
+    border-radius: 3px;
+    width: 100%;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+footer {
+  color: white;
+  text-align: center;
+}
+
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .well {
@@ -50,11 +65,6 @@ input {
   width: 150px;
 }
 
-/*body {
-  font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;
-}*/
-
-
 .container {
     width: 70%;
     background: rgba(255, 255, 255, 0.95);
@@ -71,7 +81,6 @@ h1 {
  color: white;
  margin: 0.5em auto 1em auto;
  text-align: center;
- /*font-family: 'Poiret One', cursive;*/
  font-size: 5em;
  font-weight: bold;
 }
@@ -113,11 +122,6 @@ h1 {
   color: black;
 }
 
-input[type='text'], input[type='password'] {
-    border-radius: 3px;
-    width: 100%;
-}
-
-p {
-  font-size: 1.5em;
+#nuser {
+  text-align: center;
 }
