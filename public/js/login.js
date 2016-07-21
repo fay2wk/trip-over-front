@@ -20,7 +20,7 @@ function signin (formData) {
       window.localStorage.email = $('#user-email').val()
       window.localStorage.auth_token = response.auth_token
       // then redirect
-      window.location.href = 'index.html'
+      window.location.href = 'home.html'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
