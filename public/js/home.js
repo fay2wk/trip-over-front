@@ -2,6 +2,7 @@
 // loads main page with select of cities
 $(document).ready(function () {
   $('#dates').hide()
+  var urlArray = ['http://i.imgur.com/HRW1HZd.jpg', 'http://i.imgur.com/GqCtHnv.jpg', 'http://i.imgur.com/Y7TH5wz.jpg', 'http://i.imgur.com/wa3vTso.jpg']
   $.ajax({
     url: 'http://localhost:3000/city',
     type: 'GET',
@@ -9,7 +10,7 @@ $(document).ready(function () {
     dataType: 'json',
     success: function (cities) {
       $.each(cities, function (index, item) {
-        $('#add-city').append('<div class="city-box">' + '<h3>' + cities[index].name + '</h3>' + '</div>' + '</br>')
+        $('#add-city').append('<div class="city-box" style="background-image: url(' + urlArray[Math.floor(Math.random()*urlArray.length)] + ')">' + '<h3>' + cities[index].name + '</h3>' + '</div>' + '</br>')
       })
     },
     error: function (xhr, status) {
