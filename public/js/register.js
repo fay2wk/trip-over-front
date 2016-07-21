@@ -1,5 +1,5 @@
 /* global $ */
-var serverURL = 'http://localhost:3000/'
+var serverURL = 'https://trip-over.herokuapp.com/'
 
 $(function () {
   // listen for the form login

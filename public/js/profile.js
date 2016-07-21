@@ -17,7 +17,7 @@ $(function () {
   function editProfile (formData) {
     $.ajax({
       type: 'PUT',
-      url: 'http://localhost:3000/profile',
+      url: 'https://trip-over.herokuapp.com/profile',
       data: formData,
       headers: {
         'User-Email': window.localStorage['email'],

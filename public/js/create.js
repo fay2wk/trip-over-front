@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('.btn').append($(this).text() + '<span class="caret"></span>')
   })
   $.ajax({
-    url: 'http://localhost:3000/city',
+    url: 'https://trip-over.herokuapp.com/city',
     type: 'GET',
     crossDomain: true,
     dataType: 'json',
@@ -31,7 +31,7 @@ $(document).ready(function () {
     $.ajax({
       type: 'POST',
       data: city,
-      url: 'http://localhost:3000/city',
+      url: 'https://trip-over.herokuapp.com/city',
       headers: {
         'User-Email': window.localStorage['email'],
         'Auth-Token': window.localStorage['auth_token']
@@ -55,7 +55,7 @@ $(document).ready(function () {
     $.ajax({
       type: 'POST',
       data: attraction,
-      url: 'http://localhost:3000/' + city + '/attractions',
+      url: 'https://trip-over.herokuapp.com/' + city + '/attractions',
       headers: {
         'User-Email': window.localStorage['email'],
         'Auth-Token': window.localStorage['auth_token']
