@@ -7,7 +7,7 @@
     <title>Profile</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="./public/js/register.js"></script>
+    <script src="./public/js/profile.js"></script>
 </head>
 <body>
   <nav class="navbar navbar-right navbar-static-top">
@@ -38,7 +38,7 @@
             <div class="control-group">
               <label class="control-label" for="Name">Name</label>
               <div class="controls">
-                <input type="text" id="Name" name="user[name]" placeholder="John Doe" class="form-control input-lg">
+                <input type="text" id="name" name="name" placeholder="John Doe" class="form-control input-lg">
                 <p class="help-block">Username can contain any letters or numbers, without spaces</p>
               </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="control-group">
               <label class="control-label" for="email">E-mail</label>
               <div class="controls">
-                <input type="email" id="email" name="user[email]" placeholder="example@email.com" class="form-control input-lg">
+                <input type="email" id="email" name="email" placeholder="example@email.com" class="form-control input-lg">
                 <p class="help-block">Please provide your E-mail</p>
               </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="control-group">
               <label class="control-label" for="password">Password</label>
               <div class="controls user">
-                <input type="password" id="password" name="user[password]" placeholder="Password" class="form-control input-lg">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control input-lg">
                 <p class="help-block">Password should be at least 6 characters</p>
               </div>
             </div>
