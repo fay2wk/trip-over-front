@@ -22,6 +22,10 @@ input {
   margin: 4px;
 }
 
+footer {
+  text-align: center;
+}
+
 .main, .city-box, .att-box {
   margin: 2px;
   padding: 5px;

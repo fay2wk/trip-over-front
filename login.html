@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Sign In</title>
     <link rel="stylesheet" type= "text/css" href="./public/stylesheets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./public/js/login.js"></script>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Sign In</h1>
     <div class="container">
       <div>
        <img id="logo2" src="./public/images/logo.png">
@@ -18,10 +18,14 @@
         <p><input id="user-email" type="text" name="user[email]" placeholder="Email"></p>
         <p>Password:</p>
         <p><input type="password" name="user[password]" value="" placeholder="Password"></p>
-        <input type="submit" name="commit" value="Login" class="button">
-        <input type="submit" name="uncommit" value="Logout" class="button">
+        <input type="submit" name="commit" value="Sign In" class="button">
+        <p id="nuser">New User?</p>
+        <input type="submit" name="uncommit" value="Sign Up" class="button">
     </form>
-
   </div>
+  <footer>
+    <p>2016 TripOver</p>
+    <p>Background by Freepik.</p>
+  </footer>
 </body>
 </html>
