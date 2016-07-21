@@ -7,26 +7,3 @@ if (!window.localStorage['email'] || !window.localStorage['auth_token']) window.
 $(function () {
   // else loadUser()
 })
-
-// load the user from the server. This ensures we have a logged in user
-// function loadUser () {
-//   $.ajax({
-//     type: 'GET',
-//     url: serverURL + 'user',
-//     beforeSend: function (xhr) {
-//       xhr.setRequestHeader('User-Email', window.localStorage['email'])
-//       xhr.setRequestHeader('Auth-Token', window.localStorage['auth_token'])
-//     },
-//     success: function (response) {
-//       console.log(response)
-//       // asign the current user
-//       currentUser = response
-//       // tell the current page we are ready
-//       if (pageReady) pageReady()
-//     },
-//     error: function (xhr, ajaxOptions, thrownError) {
-//       // else error, redirect to login
-//       window.location.href = 'login.html'
-//     }
-//   })
-// }
