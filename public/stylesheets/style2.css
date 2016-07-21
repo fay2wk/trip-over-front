@@ -45,7 +45,7 @@ footer {
   background-color: rgba(200, 200, 200, 0.7);
 }
 
-#save-trip, #save-btn {
+#save-trip, .save-btn {
   margin: 5px;
   color: black;
   border: none;
@@ -54,7 +54,7 @@ footer {
   background-color: rgba(150, 230, 230, 0.7)
 }
 
-#save-btn {
+.save-btn {
   height: 40px;
   width: 100px;
 }
