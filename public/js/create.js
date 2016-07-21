@@ -25,7 +25,6 @@ $(document).ready(function () {
   })
 
   $(document).on('click', '.save-city', function (event) {
-    event.preventDefault()
     var city = {name: $('#city').val()}
     console.log(city)
     $.ajax({
@@ -62,7 +61,7 @@ $(document).ready(function () {
       },
       success: function (data) {
         console.info(data)
-        window.location.href = 'home.html'
+        window.location.href = 'trip.html'
       }
     })
   })
