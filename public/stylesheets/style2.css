@@ -92,3 +92,7 @@ input[type='text'] {
     border-radius: 3px;
     width: 30%;
 }
+
+.glyphicon-menu-hamburger {
+  color: #21DADD;
+}
