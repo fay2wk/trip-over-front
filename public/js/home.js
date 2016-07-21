@@ -67,11 +67,15 @@ $(document).ready(function () {
     $('#dates').show()
     $('h1').text('Current Trip')
     $.each(attractArray, function (index, item) {
-      $('#add-att').append('<div class="att-box">' + '<h3>' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
+      $('#add-att').append('<div class="att-box">' + '<h3 class="att-name">' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
+  })
+  $(document).on('click', '.att-name', function (event) {
+    $('.add-box').hide()
   })
   $(document).on('click', '#save-trip', function (event) {
     console.log('hi')
+    event.preventDefault()
     if (attractArray.length < 1) {
       alert('There are no attractions in trips.')
       return
@@ -79,8 +83,15 @@ $(document).ready(function () {
     // Get date values
       var startD = $('#start').val()
       var endD = $('#end').val()
-      var trip = {places: attractArray, startDate: startD, endDate: endD}
-      console.log(trip)
+      // For loop to go through the attractions selected which in the window and push into an array. This array will be included into a trip object which is then posted to the server
+      var attractArray2 = []
+      var a = document.getElementsByClassName('att-name')
+      for (var i = 0; i < a.length; i++) {
+        var attractObj2 = {name: a[i].innerText, details: $('p')[i].innerText}
+        attractArray2.push(attractObj2)
+      }
+      console.log(attractArray2)
+      var trip = {places: attractArray2, startDate: startD, endDate: endD}
     }
     $.ajax({
       type: 'POST',
