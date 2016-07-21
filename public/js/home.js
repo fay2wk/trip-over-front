@@ -1,6 +1,7 @@
 /* globals $ alert */
 // loads main page with select of cities
 $(document).ready(function () {
+  $('#save-trip').hide()
   $('#dates').hide()
   var urlArray = ['http://i.imgur.com/HRW1HZd.jpg', 'http://i.imgur.com/GqCtHnv.jpg', 'http://i.imgur.com/Y7TH5wz.jpg', 'http://i.imgur.com/wa3vTso.jpg', 'http://i.imgur.com/a0klqK6.jpg', 'http://i.imgur.com/AK2yI1K.jpg', 'http://i.imgur.com/mvfVLt7.jpg', 'http://i.imgur.com/OAaTfF7.jpg']
   $.ajax({
@@ -23,6 +24,7 @@ $(document).ready(function () {
     $('#attract').empty()
     $('#dates').hide()
     $('#add-city').show()
+    $('#save-trip').hide()
     $('h1').text('Choose City')
   })
   // when user selects a city, all city's attractions will be shown. The text is from the city-box div which has the city's name. The city's name is then included in the url to direct to the corresponding city and it's attractions
@@ -56,22 +58,31 @@ $(document).ready(function () {
     for (var i = 0; i < $(this).length; i++) {
       var attractObj = {name: $(this).text(), details: $(this).siblings('p').text()}
       attractArray.push(attractObj)
-      $(this).parent('.att-box').hide()
+      $(this).parent('.att-box').remove()
+      console.log(attractArray)
     }
-    console.log(attractArray)
   })
   $(document).on('click', '#trip-plan', function (event) {
     $('#add-city').hide()
     $('#attract').empty()
     $('#add-att').show()
     $('#dates').show()
+    $('#save-trip').show()
     $('h1').text('Current Trip')
     $.each(attractArray, function (index, item) {
-      $('#add-att').append('<div class="att-box">' + '<h3 class="att-name">' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
+      $('#add-att').append('<div class="att-box">' + '<h3 class="att-name2">' + attractArray[index].name + '</h3>' + '<p>' + attractArray[index].details + '</p>' + '</div>' + '</br>')
     })
   })
-  $(document).on('click', '.att-name', function (event) {
-    $('.add-box').hide()
+
+  $(document).on('click', '.att-name2', function (event) {
+    $(this).parent('.att-box').remove()
+    for (var i = 0; i < attractArray.length; i++) {
+        console.log(attractArray[i].name)
+        if (attractArray[i].name === $(this).text()) {
+          attractArray.splice(i, 1)
+      } else {
+        return}
+    }
   })
   $(document).on('click', '#save-trip', function (event) {
     console.log('hi')
@@ -85,7 +96,7 @@ $(document).ready(function () {
       var endD = $('#end').val()
       // For loop to go through the attractions selected which in the window and push into an array. This array will be included into a trip object which is then posted to the server
       var attractArray2 = []
-      var a = document.getElementsByClassName('att-name')
+      var a = document.getElementsByClassName('att-name2')
       for (var i = 0; i < a.length; i++) {
         var attractObj2 = {name: a[i].innerText, details: $('p')[i].innerText}
         attractArray2.push(attractObj2)
@@ -102,6 +113,7 @@ $(document).ready(function () {
         'Auth-Token': window.localStorage['auth_token']
       },
       success: function (data) {
+        window.location.href = 'trip.html'
         console.info(data)
       }
     })
